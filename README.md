@@ -1,5 +1,5 @@
 <div aling="center">
-<img src="/assets/logo.svg" alt="Sona Logo" style="height: 200px; width:100%;"/>
+<img src="/assets/Logo.svg" alt="Sona Logo" style="height: 200px; width:100%;"/>
 </div>
 
 ---
