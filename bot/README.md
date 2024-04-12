@@ -23,4 +23,4 @@ bun dev
 
 Para conseguir suas credenciais do Discord você precisa acessar o <a href="https://discord.com/developers/applications">Discord developers portal</a>, criar um bot e pegar a credenciais do mesmo
 
-[![discord-auth](https://github.com/AguaPotavel/sona-voice-app/blob/main/bot/assets/discord-authentication.png)]
+![discord-auth](https://github.com/AguaPotavel/sona-voice-app/blob/main/bot/assets/discord-authentication.png)
