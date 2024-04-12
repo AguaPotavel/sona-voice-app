@@ -1,5 +1,5 @@
 <div aling="center">
-<img src="assets/logo.svg" alt="Sona Logo" style="height: 200px; width:100%;"/>
+<img src="/assets/logo.svg" alt="Sona Logo" style="height: 200px; width:100%;"/>
 </div>
 
 ---
@@ -36,7 +36,7 @@ Para solucionar isso criei a aplicação como um meio de possibilitar uma interf
 
 ### Sona em funcionamento
 
-[![Watch the video](/app/assests/Youtube.png)](https://www.youtube.com/watch?v=F6JpOxfMgvs)
+[![Watch the video](/assests/Youtube.png)](https://www.youtube.com/watch?v=F6JpOxfMgvs)
 
 ---
 
