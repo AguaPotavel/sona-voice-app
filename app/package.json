@@ -1,0 +1,59 @@
+{
+  "private": true,
+  "name": "sona",
+  "description": "Sona Voice App",
+  "version": "1.0.0",
+  "author": "Ruan Meira <ruancarlosmeira@gmail.com>",
+  "main": "app/background.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development npm-run-all --parallel dev:renderer dev:convex",
+    "prod": "cross-env NODE_ENV=production npm-run-all --parallel prod:renderer dev:convex",
+    "build": "cross-env NODE_ENV=development nextron build --win --x64",
+    "deploy": "cross-env NODE_ENV=production nextron build --win --x64 --publish never",
+    "dev:renderer": "nextron --startup-delay 3000",
+    "prod:renderer": "nextron --startup-delay 3000",
+    "dev:convex": "convex dev",
+    "predev": "convex dev --until-success && convex dashboard",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-serve": "^1.3.0",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.8",
+    "league-connect": "6.0.0-rc12"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.23.9",
+    "@babel/runtime-corejs3": "^7.23.9",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.52",
+    "autoprefixer": "^10.4.16",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "convex": "^1.9.1",
+    "cross-env": "^7.0.3",
+    "crypto-js": "^4.2.0",
+    "electron": "^28.2.1",
+    "electron-builder": "^24.9.1",
+    "framer-motion": "^11.0.6",
+    "jotai": "^2.6.5",
+    "next": "^12.3.4",
+    "next-themes": "^0.2.1",
+    "nextron": "^8.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.30",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "rxjs": "^7.8.1",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sona-voice-app/desktop-app-electron.git"
+  }
+}

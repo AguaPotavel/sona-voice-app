@@ -1,0 +1,35 @@
+{
+  "name": "league-arena-discord-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "set NODE_ENV=development&& npm-run-all --parallel dev:server dev:client",
+    "start": "set NODE_ENV=production&& node src/index.js",
+    "build": "tsc && vite build",
+    "dev:server": "convex dev",
+    "dev:client": "nodemon src/index.js",
+    "predev": "convex dev --until-success"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^2.2.0",
+    "convex": "^1.9.1",
+    "create-vite": "^5.2.1",
+    "discord-api-types": "^0.37.70",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "nodemon": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
+
+
