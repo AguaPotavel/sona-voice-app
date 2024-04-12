@@ -86,7 +86,7 @@ Algumas informações são importantes sobre o projeto. Eu fiz ele como objeto d
 
 O projeto funciona em 3 etapas, então todas tem que estar rodando para ele funciona em ordem, para evitar problemas siga a ordem:
 
-1 - [Bot do discord](https://github.com/AguaPotavel/sona-voice-app/bot)
+1 - [Bot do discord](https://github.com/AguaPotavel/sona-voice-app/tree/main/bot)
 2 - [Servidor](https://github.com/AguaPotavel/sona-server)
 3 - Abra o league of legends.
 4 - Inicie o Applicativo desktop.
