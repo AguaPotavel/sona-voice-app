@@ -36,7 +36,7 @@ Para solucionar isso criei a aplicação como um meio de possibilitar uma interf
 
 ### Sona em funcionamento
 
-[![Watch the video](/assests/Youtube.png)](https://www.youtube.com/watch?v=F6JpOxfMgvs)
+[![Watch the video](/assets/Youtube.png)](https://www.youtube.com/watch?v=F6JpOxfMgvs)
 
 ---
 
