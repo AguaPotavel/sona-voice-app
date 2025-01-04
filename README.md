@@ -1,15 +1,15 @@
-<div aling="center">
+<div align="center">
 <img src="/assets/Logo.svg" alt="Sona Logo" style="height: 200px; width:100%;"/>
 </div>
 
 ---
 <div align="center">
     <strong>
-  Sona é uma aplicação voltada a criar um canal para comunicação por voz em partidas de league of legends utilizando um bot do discord.
+  Sona is an application designed to create a voice communication channel for League of Legends matches using a Discord bot.
   </strong>
 
   <h2>
-    <a href="https://sona.app.br">Site Oficial</a>
+    <a href="https://sona.app.br">Official Website</a>
   </h2>
   
 </div>
@@ -18,23 +18,21 @@
 <div align="center">
 
   <p align="center">
-    <a href="#sobre">Problema</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;
+    <a href="#problem">Problem</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;
     <a href="#setup">Setup</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;
-    <a href="#observações">Observações</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;
+    <a href="#notes">Notes</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;
    </p>
 </div>
 
 ---
 
-# Problema
+# Problem
 
-League of legends atualmente não possui um meio de comunicação por voz nas rankeadas e mesmo normal game, unicas maneiras de você se comunicar por voz é utilizando o voip do jogo, porém ele só funciona 
-quando é iniciado a fila com membros em grupo ou utilizando um meio de comunicação externo, por diversas vezes vi jogadores mandarem seus discords particulares para outros jogadores entrarem, só que isso acaba acarretando em um problema de ficar entrando em diversos discords desconhecidos.
+League of Legends currently lacks built-in voice communication for ranked or normal games. The only ways to communicate by voice are either using the game's built-in VoIP (which only works when queuing with a pre-made group) or via external communication tools. Often, players share their personal Discord accounts, which leads to joining multiple unknown servers.
 
-Para solucionar isso criei a aplicação como um meio de possibilitar uma interface de comunicação em um canal do discord criado dinâmicamente quando sua partida é iniciada, mesmo sem nenhum dos jogadores se conhecendo.
+To address this, I created Sona, an application that dynamically generates a Discord channel when a match starts, allowing voice communication without players having to know each other beforehand.
 
-
-### Sona em funcionamento
+### Sona in Action
 
 [![Watch the video](/assets/Youtube.png)](https://www.youtube.com/watch?v=F6JpOxfMgvs)
 
@@ -42,25 +40,24 @@ Para solucionar isso criei a aplicação como um meio de possibilitar uma interf
 
 # Setup
 
-instalar os pacotes
 
 ```bash
-# não é possivel usar *pnpm* devido a um problema em um pacote utilizado na lib nextron
-npm install ou yarn
+# *pnpm* cannot be used due to an issue with a package in the nextron library
+npm install or yarn
 ```
 
 ### Convex
 
 
-É necessário criar uma conta no convex e criar um projeto para você utilizar, as variáveis devem ser colocadas no arquivo .env
+You need to create an account on Convex and set up a project. Add the required environment variables to the .env file.
 
-<a href="https://www.convex.dev">Site Convex</a>
+<a href="https://www.convex.dev">Convex Website</a>
 
-### Servidor
+### Server
 
-Para funcionar é necessário que o servidor esteja rodando primeiro. na porta de sua preferência, só atenção para colocar a mesma porta na hora de configurar o **bot do discord**.
+To function properly, the server must run first on your preferred port. Ensure the same port is configured in the Discord bot.
 
-a credencial: **NEXT_PUBLIC_SONA_SECRET_DISCORD_OAUTH** deve ser igual a crendencial no servidor em 
+The credential: NEXT_PUBLIC_SONA_SECRET_DISCORD_OAUTH should match the server credential in:
 
 ```bash
 server/src/app/discord/callback/page.tsx
@@ -68,7 +65,7 @@ server/src/app/discord/callback/page.tsx
 
 ```js
 
-// deve ser substituido no lugar de sona-secret-key
+// Replace "sona-secret-key" accordingly
 async function updateUserWithDiscord() {
     if (refInput.current === null || data === null) return;
 
@@ -78,42 +75,40 @@ async function updateUserWithDiscord() {
 
 ---
 
-# Observações
+# Notes
 
-Algumas informações são importantes sobre o projeto. Eu fiz ele como objeto de estudo e em pouco tempo, então grande parte das coisas não utilizei a melhor abordagem. Fique livre para alterar ou mudar oque você achar pertinente. 
+Some important notes about the project: I developed it as a study project in a short time, so many parts don't follow the best practices. Feel free to modify or improve anything you find necessary.
 
-## Detalhes para rodar
+## Running the project
 
-O projeto funciona em 3 etapas, então todas tem que estar rodando para ele funciona em ordem, para evitar problemas siga a ordem:
+The project consists of three parts, and all need to be running in order:
 
-1 - [Bot do discord](https://github.com/AguaPotavel/sona-voice-app/tree/main/bot)
-2 - [Servidor](https://github.com/AguaPotavel/sona-server)
-3 - Abra o league of legends.
-4 - Inicie o Applicativo desktop.
+1 - [Dircord bot](https://github.com/AguaPotavel/sona-voice-app/tree/main/bot)
+2 - [Server](https://github.com/AguaPotavel/sona-server)
+3 - Open league of legends.
+4 - Start desktop application.
 
 ## Convex
 
-O convex quando é utilizado como desenvolvimento ele faz um deploy das suas funções, mutations e etc sempre que você salvar um arquivo na pasta convex,então se você alterar algo em um dos projeto e rodar outro posteriormente ele irá sobrescrever aquela função baseado no que o último tem local, idealmente era para utilizar ele em só um dos projetos, é uma coisa que preciso refatorar e centralizar só para o servidor alterar no convex.
+When using Convex in development mode, it deploys your functions, mutations, etc., every time you save a file in the Convex folder. If you run one project after modifying another, the last one will overwrite the previous functions. Ideally, Convex should be centralized in the server. This requires refactoring.
 
 ## Discord
 
-As credenciais do discord tem que ser colocadas de acordo com o bot do discord, mais detalhes sobre ela no repositório do bot nessa mesma organização.
+Discord credentials must be configured according to the Discord bot. More details can be found in the bot repository within the same organization.
 
-## Variaveis de ambiente
+## Environment Variables
 
-No app possui dois arquivos de variaveis o externo que fica na pasta **root**
+The app has two environment variable files: one in the **root** folder and another in the **renderer** folder. Ensure both are properly configured.
 
-e outro dentro da pasta **renderer**, lembre-se de configurar os dois.
-
-ao rodar: 
+to run: 
 
 ```bash
 yarn dev 
-# é utilizado o arquivo .env.development e renderer/.env.development
+# Uses .env.development and renderer/.env.development
 
-yarn prod # app buildado
-# é utilizado o arquivo .env.production e renderer/.env.development
+yarn prod # Builds the app
+# Uses .env.production and renderer/.env.development
 ```
 
-**Devido a uma limitação do próprio nextron não configurei para alterar o arquivo de env para produção na interface visual, tentei algumas abordagens que conhecia e nenhuma funcionou, tem issues abertas no projeto do nextron sobre isso ainda sem resposta, fique atento a isso**
+**Due to a limitation in Nextron, I couldn't configure the environment file to switch to production in the visual interface. I attempted several approaches, but none worked. There are open issues in the Nextron project regarding this, so keep this in mind.**
 
